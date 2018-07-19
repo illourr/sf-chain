@@ -1,4 +1,4 @@
-const SHA256 = require('crypto-js/sha256');
+const SHA256 = require("crypto-js/sha256");
 class Block {
   constructor(timestamp, lastHash, hash, data) {
     this.timestamp = timestamp;
@@ -15,7 +15,7 @@ class Block {
   }
 
   static genesis() {
-    return new this('Genesis time', '-----', 'f1r57-h45h', [])
+    return new this("Genesis time", "-----", "f1r57-h45h", []);
   }
 
   static mineBlock(lastBlock, data) {
@@ -31,7 +31,7 @@ class Block {
   }
 
   static blockHash(block) {
-    const {timestamp, lastHash, data} = block;
+    const { timestamp, lastHash, data } = block;
     return Block.hash(timestamp, lastHash, data);
   }
 }
